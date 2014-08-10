@@ -1,0 +1,39 @@
+{
+  "name": "hapi-tdd-ttt",
+  "version": "0.0.1",
+  "description": "Tic-Tac-Toe TDD style!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "./node_modules/lab/bin/lab -c",
+    "watch-test": "nodemon --exec npm test",
+    "build-js": "browserify browser/main.js | uglifyjs -mc > public/js/bundle.js",
+    "watch-js": "watchify browser/main.js -o public/js/bundle.js -dv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mindkitchen/hapi-tdd-ttt.git"
+  },
+  "keywords": [
+    "hapi",
+    "seed"
+  ],
+  "contributors": [
+    { "name": "Randall A. Gordon", "email": "<randall@mindkitchenmedia.com" },
+    { "name": "Marta McCasland", "email": "<marta@mindkitchenmedia.com" }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mindkitchen/hapi-tdd-ttt/issues"
+  },
+  "homepage": "https://github.com/mindkitchen/hapi-tdd-ttt",
+  "dependencies": {
+    "joi": "^4.6.1",
+    "hapi": "^6.2.0",
+    "handlebars": "^2.0.0-alpha.4",
+    "domready": "^1.0.5"
+  },
+  "devDependencies": {
+    "lab": "^3.2.1"
+  }
+}
