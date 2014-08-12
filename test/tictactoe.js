@@ -51,8 +51,8 @@ Lab.experiment("TicTacToe", function () {
     Lab.expect(t1.checkRow(2)).to.be.undefined;
 
     var testBoard2 = [
-      [".", "x", "x"],
       ["o", "o", "o"],
+      ["x", ".", "x"],
       ["x", ".", "."]
     ];
 
@@ -60,9 +60,68 @@ Lab.experiment("TicTacToe", function () {
       board: testBoard2,
     });
 
-    Lab.expect(t2.checkRow(0)).to.be.undefined;
-    Lab.expect(t2.checkRow(1)).to.equal("o");
+    Lab.expect(t2.checkRow(0)).to.equal("o");
+    Lab.expect(t2.checkRow(1)).to.be.undefined;
     Lab.expect(t2.checkRow(2)).to.be.undefined;
+
+    var testBoard3 = [
+      [".", "o", "o"],
+      ["x", "x", "x"],
+      ["o", ".", "."]
+    ];
+
+    var t3 = new TicTacToe({
+      board: testBoard3,
+    });
+
+    Lab.expect(t3.checkRow(0)).to.be.undefined;
+    Lab.expect(t3.checkRow(1)).to.equal("x");
+    Lab.expect(t3.checkRow(2)).to.be.undefined;
+    done();
+
+    var testBoard4 = [
+      [".", "x", "x"],
+      ["o", "o", "o"],
+      ["x", ".", "."]
+    ];
+
+    var t4 = new TicTacToe({
+      board: testBoard4,
+    });
+
+    Lab.expect(t4.checkRow(0)).to.be.undefined;
+    Lab.expect(t4.checkRow(1)).to.equal("o");
+    Lab.expect(t4.checkRow(2)).to.be.undefined;
+    done();
+
+    var testBoard5 = [
+      ["o", "x", "o"],
+      [".", "o", "."],
+      ["x", "x", "x"]
+    ];
+
+    var t5 = new TicTacToe({
+      board: testBoard5,
+    });
+
+    Lab.expect(t5.checkRow(0)).to.be.undefined;
+    Lab.expect(t5.checkRow(1)).to.be.undefined;
+    Lab.expect(t5.checkRow(2)).to.equal("x");
+    done();
+
+    var testBoard6 = [
+      ["x", ".", "x"],
+      [".", "x", "."],
+      ["o", "o", "o"]
+    ];
+
+    var t6 = new TicTacToe({
+      board: testBoard6,
+    });
+
+    Lab.expect(t6.checkRow(0)).to.be.undefined;
+    Lab.expect(t6.checkRow(1)).to.be.undefined;
+    Lab.expect(t6.checkRow(2)).to.equal("o");
     done();
   });
 
@@ -82,18 +141,77 @@ Lab.experiment("TicTacToe", function () {
     Lab.expect(t1.checkColumn(2)).to.be.undefined;
 
     var testBoard2 = [
-      [".", "o", "x"],
-      [".", "o", "."],
-      ["x", "o", "."]
+      ["o", ".", "x"],
+      ["o", ".", "x"],
+      ["o", "x", "."]
     ];
 
     var t2 = new TicTacToe({
       board: testBoard2,
     });
 
-    Lab.expect(t2.checkColumn(0)).to.be.undefined;
-    Lab.expect(t2.checkColumn(1)).to.equal("o");
+    Lab.expect(t2.checkColumn(0)).to.equal("o");
+    Lab.expect(t2.checkColumn(1)).to.be.undefined;
     Lab.expect(t2.checkColumn(2)).to.be.undefined;
+
+    var testBoard3 = [
+      ["o", "x", "."],
+      [".", "x", "."],
+      ["o", "x", "o"]
+    ];
+
+    var t3 = new TicTacToe({
+      board: testBoard3,
+    });
+
+    Lab.expect(t3.checkColumn(0)).to.be.undefined;
+    Lab.expect(t3.checkColumn(1)).to.equal("x");
+    Lab.expect(t3.checkColumn(2)).to.be.undefined;
+    done();
+
+    var testBoard4 = [
+      ["x", "o", "."],
+      [".", "o", "x"],
+      ["x", "o", "."]
+    ];
+
+    var t4 = new TicTacToe({
+      board: testBoard4,
+    });
+
+    Lab.expect(t4.checkColumn(0)).to.be.undefined;
+    Lab.expect(t4.checkColumn(1)).to.equal("o");
+    Lab.expect(t4.checkColumn(2)).to.be.undefined;
+    done();
+
+    var testBoard5 = [
+      ["o", "o", "x"],
+      [".", ".", "x"],
+      [".", "o", "x"]
+    ];
+
+    var t5 = new TicTacToe({
+      board: testBoard5,
+    });
+
+    Lab.expect(t5.checkColumn(0)).to.be.undefined;
+    Lab.expect(t5.checkColumn(1)).to.be.undefined;
+    Lab.expect(t5.checkColumn(2)).to.equal("x");
+    done();
+
+    var testBoard6 = [
+      ["x", ".", "o"],
+      [".", ".", "o"],
+      ["x", "x", "o"]
+    ];
+
+    var t6 = new TicTacToe({
+      board: testBoard6,
+    });
+
+    Lab.expect(t6.checkColumn(0)).to.be.undefined;
+    Lab.expect(t6.checkColumn(1)).to.be.undefined;
+    Lab.expect(t6.checkColumn(2)).to.equal("o");
     done();
   });
 
@@ -112,18 +230,45 @@ Lab.experiment("TicTacToe", function () {
     Lab.expect(t1.checkDiagonal(1)).to.be.undefined;
 
     var testBoard2 = [
-      ["x", ".", "o"],
-      [".", "o", "x"],
-      ["o", ".", "x"]
+      ["o", ".", "x"],
+      ["x", "o", "x"],
+      ["x", ".", "o"]
     ];
 
     var t2 = new TicTacToe({
       board: testBoard2,
     });
     
-    Lab.expect(t2.checkDiagonal(0)).to.be.undefined;
-    Lab.expect(t2.checkDiagonal(1)).to.equal("o");
+    Lab.expect(t2.checkDiagonal(0)).to.equal("o");
+    Lab.expect(t2.checkDiagonal(1)).to.be.undefined;
 
+    var testBoard3 = [
+      ["o", ".", "x"],
+      [".", "x", "o"],
+      ["x", ".", "o"]
+    ];
+
+    var t3 = new TicTacToe({
+      board: testBoard3,
+    });
+
+    Lab.expect(t3.checkDiagonal(0)).to.be.undefined;
+    Lab.expect(t3.checkDiagonal(1)).to.equal("x");
+
+    done();
+
+    var testBoard4 = [
+      ["x", ".", "o"],
+      [".", "o", "x"],
+      ["o", ".", "x"]
+    ];
+
+    var t4 = new TicTacToe({
+      board: testBoard4,
+    });
+
+    Lab.expect(t4.checkDiagonal(0)).to.be.undefined;
+    Lab.expect(t4.checkDiagonal(1)).to.equal("o");
     done();
   });
 
