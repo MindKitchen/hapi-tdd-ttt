@@ -415,9 +415,38 @@ Lab.experiment("TicTacToe", function () {
     done();
   });
 
+  Lab.test("can switch to the next player", function (done) {
+    var t1 = new TicTacToe();
+    Lab.expect(t1.currentPlayer()).to.equal("x");
+    t1.nextPlayer();
+    Lab.expect(t1.currentPlayer()).to.equal("o");
+    t1.nextPlayer();
+    Lab.expect(t1.currentPlayer()).to.equal("x");
+    done();
+  });
+
+  Lab.test("can make plays and updates to the next player", function (done) {
+    var t1 = new TicTacToe();
+    t1.play({ row: 0, column: 0 });
+    Lab.expect(t1.board[0][0]).to.equal("x");
+    t1.play({ row: 0, column: 1 });
+    Lab.expect(t1.board[0][1]).to.equal("o");
+    done();
+  });
+
+  Lab.test("won't allow a play on an already occupied space", function (done) {
+    var t1 = new TicTacToe();
+    t1.play({ row: 0, column: 0 });
+    t1.play({ row: 0, column: 0 });
+    Lab.expect(t1.board[0][0]).to.equal("x");
+    Lab.expect(t1.currentPlayer()).to.equal("o");
+    done();
+  });
+
   Lab.test("has its own toString", function (done) {
     var t1 = new TicTacToe();
     Lab.expect(t1.toString()).to.equal("...\n...\n...\n");
     done();
   });
+
 });
