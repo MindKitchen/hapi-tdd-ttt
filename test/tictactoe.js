@@ -445,7 +445,7 @@ Lab.experiment("TicTacToe", function () {
 
   Lab.test("has its own toString", function (done) {
     var t1 = new TicTacToe();
-    Lab.expect(t1.toString()).to.equal("...\n...\n...\n");
+    Lab.expect(t1.toString()).to.equal("...\n...\n...");
     done();
   });
 
